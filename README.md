@@ -5,14 +5,17 @@
 This project presents an Agentic AI framework for autonomous real–bogus classification of astronomical transient events using Deep Learning, Computer Vision, Object Detection, Large Language Models (LLMs), and Multi-Agent AI architecture.
 
 Modern astronomical sky surveys generate millions of transient alerts every night. However, nearly 90–95% of these alerts are bogus detections caused by:
+
 - Noise
 - CCD defects
 - Satellite streaks
 - Cosmic rays
 - Image subtraction artifacts
 
-Manual verification becomes impossible at this scale.  
+Manual verification becomes impossible at this scale.
+
 This project introduces an explainable and evidence-driven AI system that combines:
+
 - Vision-based classification
 - Object detection
 - Retrieval systems
@@ -30,6 +33,7 @@ Traditional CNN-based approaches provide strong classification performance but b
 LLM-based approaches can generate explanations but lack specialized astronomical visual understanding.
 
 This project addresses the research gap by combining:
+
 - Deep visual perception
 - Object detection
 - Evidence retrieval
@@ -71,17 +75,22 @@ The difference image highlights newly appearing astronomical events.
 ## Step 2 — Perception Agent
 
 ### Models Used
+
 - CNN
 - ViT (Vision Transformer)
 - CvT (Convolutional Vision Transformer)
 
 ### Task
+
 Classify transient candidates into:
+
 - REAL
 - BOGUS
 
 ### Best Result
+
 CvT achieved:
+
 - Accuracy: 99.75%
 
 ---
@@ -89,10 +98,13 @@ CvT achieved:
 ## Step 3 — Feature Discovery Agent
 
 ### Model Used
+
 - YOLOv8
 
 ### Purpose
+
 Detect visual artifacts such as:
+
 - Streaks
 - Noise
 - Bad pixels
@@ -100,6 +112,7 @@ Detect visual artifacts such as:
 - CCD defects
 
 ### Output
+
 - Bounding boxes
 - Artifact labels
 - Confidence scores
@@ -113,10 +126,12 @@ This provides visual evidence for classification decisions.
 Retrieves additional astronomical information using external APIs.
 
 ### Sources
+
 - ALeRCE API
 - Light curve catalogs
 
 ### Purpose
+
 Provide additional transient characterization and temporal evidence.
 
 ---
@@ -124,11 +139,14 @@ Provide additional transient characterization and temporal evidence.
 ## Step 5 — Reasoning Agent
 
 ### Models Used
+
 - Gemma
 - Qwen-VL
 
 ### Task
+
 Generate human-readable explanations using:
+
 - Classification outputs
 - Detected artifacts
 - Retrieved evidence
@@ -142,12 +160,14 @@ Generate human-readable explanations using:
 ## Step 6 — Integration Agent
 
 Combines outputs from all agents:
+
 - Classification result
 - Detected artifacts
 - External evidence
 - LLM reasoning
 
 ### Final Output
+
 - Real/Bogus label
 - Confidence score
 - Detected artifacts
@@ -168,9 +188,11 @@ The project uses multiple collaborating AI agents:
 | Integration Agent | Final evidence-driven decision |
 
 This transforms the system from:
+
 - Black-box AI
 
 to:
+
 - Explainable Agentic AI
 
 ---
@@ -180,18 +202,22 @@ to:
 ## 1. Classification Dataset
 
 Used for:
+
 - CvT / ViT training
 
 ### Sources
+
 - ZTF
 - PANSTARRS
 - ATLAS
 - MeerLICHT
 
 ### Dataset Size
+
 - 32,000 image triplets
 
 ### Data Split
+
 - Train: 80%
 - Validation: 10%
 - Test: 10%
@@ -201,15 +227,19 @@ Used for:
 ## 2. Object Detection Dataset
 
 Used for:
+
 - YOLOv8 training
 
 ### Initial Dataset
+
 - 536 manually annotated samples
 
 ### Expanded Dataset
+
 - 2,045 annotated samples
 
 ### Classes
+
 - Artifact
 - Noise
 - Streak
@@ -217,6 +247,7 @@ Used for:
 - Yin-Yang
 
 ### Expansion Technique
+
 - Semi-supervised pseudo-labeling
 
 ---
@@ -224,15 +255,19 @@ Used for:
 ## 3. LLM Reasoning Dataset
 
 Used for:
+
 - LLM fine-tuning
 
 ### Training Samples
+
 - 3,000
 
 ### Evaluation Samples
+
 - 536
 
 ### Contains
+
 - Image triplets
 - Labels
 - Natural language explanations
@@ -242,14 +277,17 @@ Used for:
 # Model Architecture
 
 ## Classification Models
+
 - CNN
 - ViT
 - CvT
 
 ## Object Detection
+
 - YOLOv8
 
 ## LLM Models
+
 - Gemma 27B
 - Gemma 4 E2B
 - Qwen-VL-4B
@@ -298,18 +336,21 @@ Used for:
 # Evaluation Metrics
 
 ## Classification Metrics
+
 - Accuracy
 - Precision
 - Recall
 - F1-Score
 
 ## Detection Metrics
+
 - mAP@50
 - mAP@50–95
 - Precision
 - Recall
 
 ## Reasoning Metrics
+
 - ROUGE-1
 - ROUGE-2
 - ROUGE-L
@@ -327,7 +368,8 @@ Used for:
 | ViT | 98.90% | 98.70% | 99.00% | 98.85% |
 | CvT | 99.75% | 99.72% | 99.81% | 99.77% |
 
-Best Model:
+### Best Model
+
 - CvT
 
 ---
@@ -351,7 +393,8 @@ Best Model:
 | Qwen-VL-4B | 0.559 | 0.243 | 0.337 | 0.844 |
 | Qwen2.5-3B | 0.429 | 0.175 | 0.282 | 0.772 |
 
-Best Reasoning Model:
+### Best Reasoning Model
+
 - Qwen-VL-4B
 
 ---
@@ -361,7 +404,9 @@ Best Reasoning Model:
 ## Sample Pipeline Output
 
 ### Input
+
 The system receives:
+
 - Science image
 - Reference image
 - Difference image
@@ -379,6 +424,7 @@ The system receives:
 ## Artifact Detection Output
 
 Detected Artifacts:
+
 - Streak
 - Noise
 - Bad Pixel
@@ -390,6 +436,7 @@ Bounding boxes are generated using YOLOv8 for localized artifact detection.
 ## Evidence Retrieval Output
 
 Retrieved:
+
 - Light curve information
 - Transient catalog metadata
 - Temporal event characteristics
@@ -419,13 +466,17 @@ Generated Explanation:
 
 ## Detection Output
 
-![Inference Output](images/inference_output.png)
+<p align="center">
+  <img src="./detection_result.jpg" alt="Detection Output" width="700"/>
+</p>
 
 ---
 
 ## Full Pipeline Workflow
 
-![Pipeline Workflow](images/agentic_pipeline.png)
+<p align="center">
+  <img src="./Agentic Ai Workflow.jpeg" alt="Pipeline Workflow" width="900"/>
+</p>
 
 ---
 
@@ -434,30 +485,28 @@ Generated Explanation:
 ```bash
 project/
 │
-├── images/
-│   ├── inference_output.png
-│   ├── agentic_pipeline.png
+├── detection_result.jpg
+├── Agentic Ai Workflow.jpeg
 │
 ├── datasets/
-│
 ├── models/
-│
 ├── notebooks/
-│
 ├── src/
 │
-├── inference.py
+├── mcp_yolo_server.py
+├── gemma_e2b_inference.py
+├── qwen_4b_inference.py
+├── test_detect.py
 │
-├── requirements.txt
-│
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
 # Example Inference Command
 
-```python
+```bash
 python inference.py \
     --science science.png \
     --reference reference.png \
@@ -485,22 +534,27 @@ Generated Explanation:
 # Technologies Used
 
 ## Deep Learning
+
 - PyTorch
 - Transformers
 - Vision Transformers
 
 ## Computer Vision
+
 - OpenCV
 - YOLOv8
 
 ## LLMs
+
 - Gemma
 - Qwen-VL
 
 ## APIs
+
 - ALeRCE API
 
 ## Platforms
+
 - Google Colab
 - Kaggle GPU
 
@@ -522,6 +576,7 @@ Generated Explanation:
 This project introduces a scalable and interpretable Agentic AI pipeline for astronomical transient classification.
 
 The system combines:
+
 - Deep visual perception
 - Object detection
 - Retrieval systems
