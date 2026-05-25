@@ -491,7 +491,7 @@ Generated Explanation:
 ## Full Agentic Workflow Architecture
 
 <p align="center">
-  <img src="./Full Agentic workflow.jpeg" alt="Full Agentic Workflow" width="950"/>
+  <img src="./Full Agentic workflow .jpeg" alt="Full Agentic Workflow" width="950"/>
 </p>
 
 ---
