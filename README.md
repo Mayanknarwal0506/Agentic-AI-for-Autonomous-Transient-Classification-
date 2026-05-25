@@ -26,6 +26,14 @@ to automatically classify and explain transient events.
 
 ---
 
+# Full Agentic AI Workflow
+
+<p align="center">
+  <img src="./Full%20Agentic%20workflow%20.jpeg" alt="Full Agentic AI Workflow" width="950"/>
+</p>
+
+---
+
 # Problem Statement
 
 Traditional CNN-based approaches provide strong classification performance but behave as black-box systems without interpretability.
@@ -55,14 +63,6 @@ within a unified architecture.
 - LLM-generated explanations
 - Semi-supervised dataset expansion
 - MCP-based integration pipeline
-
----
-
-# Full Agentic AI Workflow
-
-<p align="center">
-  <img src="./Full Agentic workflow.jpeg" alt="Full Agentic AI Workflow" width="950"/>
-</p>
 
 ---
 
@@ -185,8 +185,6 @@ Combines outputs from all agents:
 
 # Multi-Agent Architecture
 
-The project uses multiple collaborating AI agents:
-
 | Agent | Responsibility |
 |---|---|
 | Perception Agent | Real/Bogus classification |
@@ -209,10 +207,6 @@ to:
 
 ## 1. Classification Dataset
 
-Used for:
-
-- CvT / ViT training
-
 ### Sources
 
 - ZTF
@@ -233,10 +227,6 @@ Used for:
 ---
 
 ## 2. Object Detection Dataset
-
-Used for:
-
-- YOLOv8 training
 
 ### Initial Dataset
 
@@ -261,10 +251,6 @@ Used for:
 ---
 
 ## 3. LLM Reasoning Dataset
-
-Used for:
-
-- LLM fine-tuning
 
 ### Training Samples
 
@@ -407,69 +393,6 @@ Used for:
 
 ---
 
-# Inference Output
-
-## Sample Pipeline Output
-
-### Input
-
-The system receives:
-
-- Science image
-- Reference image
-- Difference image
-
----
-
-## Classification Output
-
-| Model | Prediction | Confidence |
-|---|---|---|
-| CvT | Bogus | 99.75% |
-
----
-
-## Artifact Detection Output
-
-Detected Artifacts:
-
-- Streak
-- Noise
-- Bad Pixel
-
-Bounding boxes are generated using YOLOv8 for localized artifact detection.
-
----
-
-## Evidence Retrieval Output
-
-Retrieved:
-
-- Light curve information
-- Transient catalog metadata
-- Temporal event characteristics
-
----
-
-## LLM Reasoning Output
-
-Generated Explanation:
-
-> "The transient candidate is classified as bogus due to the presence of strong streak artifacts, subtraction noise, and inconsistent spatial localization in the difference image."
-
----
-
-## Final Integrated Output
-
-| Component | Output |
-|---|---|
-| Classification | Bogus |
-| Confidence Score | 99.75% |
-| Detected Artifacts | Streak, Noise |
-| Explanation | Evidence-driven natural language reasoning |
-
----
-
 # Sample Inference Visualization
 
 ## Detection Output
@@ -483,15 +406,15 @@ Generated Explanation:
 ## Pipeline Workflow
 
 <p align="center">
-  <img src="./Agentic Ai Workflow.jpeg" alt="Pipeline Workflow" width="900"/>
+  <img src="./Agentic%20Ai%20Workflow.jpeg" alt="Pipeline Workflow" width="900"/>
 </p>
 
 ---
 
-## Full Agentic Workflow Architecture
+## Full Workflow Architecture
 
 <p align="center">
-  <img src="./Full Agentic workflow .jpeg" alt="Full Agentic Workflow" width="950"/>
+  <img src="./Full%20Agentic%20workflow%20.jpeg" alt="Full Workflow Architecture" width="950"/>
 </p>
 
 ---
@@ -503,7 +426,7 @@ project/
 │
 ├── detection_result.jpg
 ├── Agentic Ai Workflow.jpeg
-├── Full Agentic workflow.jpeg
+├── Full Agentic workflow .jpeg
 │
 ├── datasets/
 ├── models/
@@ -517,3 +440,101 @@ project/
 │
 ├── README.md
 └── requirements.txt
+```
+
+---
+
+# Example Inference Command
+
+```bash
+python inference.py \
+    --science science.png \
+    --reference reference.png \
+    --difference difference.png
+```
+
+---
+
+# Example Console Output
+
+```bash
+Prediction       : BOGUS
+Confidence Score : 99.75%
+
+Detected Artifacts:
+- Streak
+- Noise
+
+Generated Explanation:
+"The candidate contains subtraction artifacts and streak-like structures indicating a bogus transient."
+```
+
+---
+
+# Technologies Used
+
+## Deep Learning
+
+- PyTorch
+- Transformers
+- Vision Transformers
+
+## Computer Vision
+
+- OpenCV
+- YOLOv8
+
+## LLMs
+
+- Gemma
+- Qwen-VL
+
+## APIs
+
+- ALeRCE API
+
+## Platforms
+
+- Google Colab
+- Kaggle GPU
+
+---
+
+# Future Work
+
+- Real-time deployment optimization
+- Cross-survey generalization
+- Larger vision-language models
+- Improved reasoning quality
+- Temporal light-curve reasoning
+- LoRA/PEFT fine-tuning
+
+---
+
+# Conclusion
+
+This project introduces a scalable and interpretable Agentic AI pipeline for astronomical transient classification.
+
+The system combines:
+
+- Deep visual perception
+- Object detection
+- Retrieval systems
+- LLM reasoning
+- Multi-agent collaboration
+
+to move beyond traditional black-box AI systems toward explainable and evidence-driven scientific AI.
+
+---
+
+# References
+
+1. Stoppa et al. (2025) — Textual Interpretation of Transient Image Classifications from Large Language Models
+
+2. Liu et al. (2025) — Real-Bogus Classification Using Active and Semi-Supervised Learning
+
+3. Gupta & Muthukrishna (2025) — Transfer Learning for Transient Classification
+
+4. Cabrera-Vives et al. (2023) — Domain Adaptation for Real/Bogus Classification
+
+5. Chen et al. (2023) — TransientViT: CNN–Vision Transformer Hybrid
