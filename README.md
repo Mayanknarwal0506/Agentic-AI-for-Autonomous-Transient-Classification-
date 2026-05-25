@@ -58,6 +58,14 @@ within a unified architecture.
 
 ---
 
+# Full Agentic AI Workflow
+
+<p align="center">
+  <img src="./Full Agentic workflow.jpeg" alt="Full Agentic AI Workflow" width="950"/>
+</p>
+
+---
+
 # System Workflow
 
 ## Step 1 — Input Data
@@ -472,10 +480,18 @@ Generated Explanation:
 
 ---
 
-## Full Pipeline Workflow
+## Pipeline Workflow
 
 <p align="center">
   <img src="./Agentic Ai Workflow.jpeg" alt="Pipeline Workflow" width="900"/>
+</p>
+
+---
+
+## Full Agentic Workflow Architecture
+
+<p align="center">
+  <img src="./Full Agentic workflow.jpeg" alt="Full Agentic Workflow" width="950"/>
 </p>
 
 ---
@@ -487,6 +503,7 @@ project/
 │
 ├── detection_result.jpg
 ├── Agentic Ai Workflow.jpeg
+├── Full Agentic workflow.jpeg
 │
 ├── datasets/
 ├── models/
@@ -500,101 +517,3 @@ project/
 │
 ├── README.md
 └── requirements.txt
-```
-
----
-
-# Example Inference Command
-
-```bash
-python inference.py \
-    --science science.png \
-    --reference reference.png \
-    --difference difference.png
-```
-
----
-
-# Example Console Output
-
-```bash
-Prediction       : BOGUS
-Confidence Score : 99.75%
-
-Detected Artifacts:
-- Streak
-- Noise
-
-Generated Explanation:
-"The candidate contains subtraction artifacts and streak-like structures indicating a bogus transient."
-```
-
----
-
-# Technologies Used
-
-## Deep Learning
-
-- PyTorch
-- Transformers
-- Vision Transformers
-
-## Computer Vision
-
-- OpenCV
-- YOLOv8
-
-## LLMs
-
-- Gemma
-- Qwen-VL
-
-## APIs
-
-- ALeRCE API
-
-## Platforms
-
-- Google Colab
-- Kaggle GPU
-
----
-
-# Future Work
-
-- Real-time deployment optimization
-- Cross-survey generalization
-- Larger vision-language models
-- Improved reasoning quality
-- Temporal light-curve reasoning
-- LoRA/PEFT fine-tuning
-
----
-
-# Conclusion
-
-This project introduces a scalable and interpretable Agentic AI pipeline for astronomical transient classification.
-
-The system combines:
-
-- Deep visual perception
-- Object detection
-- Retrieval systems
-- LLM reasoning
-- Multi-agent collaboration
-
-to move beyond traditional black-box AI systems toward explainable and evidence-driven scientific AI.
-
----
-
-# References
-
-1. Stoppa et al. (2025) — Textual Interpretation of Transient Image Classifications from Large Language Models
-
-2. Liu et al. (2025) — Real-Bogus Classification Using Active and Semi-Supervised Learning
-
-3. Gupta & Muthukrishna (2025) — Transfer Learning for Transient Classification
-
-4. Cabrera-Vives et al. (2023) — Domain Adaptation for Real/Bogus Classification
-
-5. Chen et al. (2023) — TransientViT: CNN–Vision Transformer Hybrid
